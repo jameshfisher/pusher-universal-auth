@@ -35,10 +35,10 @@ app.post('/pusher/auth', function(req, res) {
     secret: req.body.authWithAppSecret,
   });
 
-  var channelData = req.body.authWithChannelData;
+  var presenceData = req.body.authWithPresenceData;
 
-  var auth = channelData ?
-    pusher.authenticate(socketId, channel, channelData) :
+  var auth = presenceData ?
+    pusher.authenticate(socketId, channel, presenceData) :
     pusher.authenticate(socketId, channel);
 
   res.send(auth);
