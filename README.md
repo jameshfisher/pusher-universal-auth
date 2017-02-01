@@ -11,7 +11,7 @@ auth: {
     authWithAppId: "YOUR_APP_ID",
     authWithAppKey: "YOUR_APP_KEY",
     authWithAppSecret: "YOUR_APP_SECRET",
-    authWithPresenceData: { // optional
+    authWithPresenceData: JSON.stringify({ // optional
       {
         user_id: 'unique_user_id',
         user_info: {
@@ -19,7 +19,7 @@ auth: {
           twitter_id: '@pusher'
         }
       }
-    }
+    })
   }
 }
 });

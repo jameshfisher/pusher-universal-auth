@@ -38,7 +38,7 @@ app.post('/pusher/auth', function(req, res) {
   var presenceData = req.body.authWithPresenceData;
 
   var auth = presenceData ?
-    pusher.authenticate(socketId, channel, presenceData) :
+    pusher.authenticate(socketId, channel, JSON.parse(presenceData)) :
     pusher.authenticate(socketId, channel);
 
   res.send(auth);
